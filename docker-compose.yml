@@ -82,6 +82,8 @@ services:
       VLLM_URL: ${VLLM_NGROK_URL}
       QDRANT_URL: http://qdrant:6333
       REDIS_URL: redis://redis:6379
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on: [qdrant, redis]
 
 volumes:

@@ -49,12 +49,18 @@ check("Redis reachable", lambda:
 
 print("\n=== KAFKA ===")
 def check_kafka_topics():
+    container = subprocess.run(
+        ["docker", "ps", "--format", "{{.Names}}"],
+        capture_output=True, text=True, check=True,
+    ).stdout
+    kafka_name = next((n for n in container.splitlines() if "kafka" in n.lower() and "zookeeper" not in n.lower()), None)
+    assert kafka_name, "kafka container not found"
     result = subprocess.run(
-        ["docker", "exec", "lab28-kafka-1", "kafka-topics", "--list",
+        ["docker", "exec", kafka_name, "kafka-topics", "--list",
          "--bootstrap-server", "localhost:9092"],
-        capture_output=True, text=True
+        capture_output=True, text=True,
     )
-    assert "data.raw" in result.stdout
+    assert "data.raw" in result.stdout, f"data.raw topic missing; topics={result.stdout!r}"
 
 check("Kafka topics exist", check_kafka_topics)
 

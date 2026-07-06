@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/vankhiem/workspace/vin/Day28/Day28-Lab-Assignment/mlruns/422006885981516813/c8291022137142ac887ebec141a0bf8e/artifacts
+end_time: 1783309564864
+entry_point_name: ''
+experiment_id: '422006885981516813'
+lifecycle_stage: active
+run_id: c8291022137142ac887ebec141a0bf8e
+run_name: vllm-serving-v1-local
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1783309564857
+status: 3
+tags: []
+user_id: vankhiem

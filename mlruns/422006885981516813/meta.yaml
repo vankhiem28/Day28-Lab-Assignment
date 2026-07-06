@@ -1,0 +1,9 @@
+artifact_location: file:///Users/vankhiem/workspace/vin/Day28/Day28-Lab-Assignment/mlruns/422006885981516813
+creation_time: 1783309564808
+effective_trace_archival_retention: null
+experiment_id: '422006885981516813'
+last_update_time: 1783309564808
+lifecycle_stage: active
+name: lab28-integration
+trace_location: null
+workspace: default
